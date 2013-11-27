@@ -46,6 +46,51 @@ namespace Imageviewer
             bitmapImage = new Bitmap(imageFile);
             fetchImageProperties();
         }
+
+        public static string GetSizeReadable(long i)
+        {
+            string sign = (i < 0 ? "-" : "");
+            double readable = (i < 0 ? -i : i);
+            string suffix;
+            if (i >= 0x1000000000000000) // Exabyte
+            {
+                suffix = "EB";
+                readable = (double)(i >> 50);
+            }
+            else if (i >= 0x4000000000000) // Petabyte
+            {
+                suffix = "PB";
+                readable = (double)(i >> 40);
+            }
+            else if (i >= 0x10000000000) // Terabyte
+            {
+                suffix = "TB";
+                readable = (double)(i >> 30);
+            }
+            else if (i >= 0x40000000) // Gigabyte
+            {
+                suffix = "GB";
+                readable = (double)(i >> 20);
+            }
+            else if (i >= 0x100000) // Megabyte
+            {
+                suffix = "MB";
+                readable = (double)(i >> 10);
+            }
+            else if (i >= 0x400) // Kilobyte
+            {
+                suffix = "KB";
+                readable = (double)i;
+            }
+            else
+            {
+                return i.ToString(sign + "0 B"); // Byte
+            }
+            readable = readable / 1024;
+
+            return sign + readable.ToString("0.### ") + suffix;
+        }
+
         private void fetchImageProperties()
         {
             listView1.Items.Clear();
@@ -102,39 +147,6 @@ namespace Imageviewer
             //Thread.Sleep(2000);
             //frmSplash.Close();
             //this.Visible = true;
-
-            // Create a tool tip, to show on the btnBrowse button
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(txtFilename, "Browse for a file, which contains icons such as the shell32.dll.");
-            tt.SetToolTip(btnBrowse, "Browse for a file, which contains icons such as the shell32.dll.");
-            tt.ToolTipIcon = ToolTipIcon.Info;
-            tt.IsBalloon = true;
-        }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Get the selected index of the icon from the list view control
-            selectedIndex = listView2.SelectedItems[0].Index;
-            // Get the desired icon from the LargeIcons array, using the selected index
-            Icon icon = Icon.FromHandle(LargeIcons[selectedIndex]);
-            // Create an image (imgIcon, convert the icon to a Bitmap, set the size to 32,32
-            imgIcon = new Bitmap(icon.ToBitmap(), 32, 32);
-            // Set the background of the picture box using the imgIcon 
-            pIcon.BackgroundImage = imgIcon;
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the open file dialog. 
-            // This dialog is used to browse for the files which 
-            // contain icons, such as .dll, .exe, .cur
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog(); // Show the dialog
-            filename = ofd.FileName; // Get the selected file name
-            txtFilename.Text = filename; // Set the text box text to the file name
-            listView1.Items.Clear(); // Clear any previous icons from the list view control.
-            ExtractIcon(); // Execute the method to get the icon(s).
         }
 
         private void btnSave_Click(object sender, EventArgs e)

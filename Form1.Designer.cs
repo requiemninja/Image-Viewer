@@ -29,14 +29,6 @@ namespace Imageviewer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lblIcon = new System.Windows.Forms.Label();
-            this.pIcon = new System.Windows.Forms.PictureBox();
-            this.txtFilename = new System.Windows.Forms.TextBox();
-            this.lblFilename = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -46,8 +38,6 @@ namespace Imageviewer
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Main = new System.Windows.Forms.TabControl();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pIcon)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -55,92 +45,6 @@ namespace Imageviewer
             this.menuStrip1.SuspendLayout();
             this.Main.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.btnBrowse);
-            this.tabPage5.Controls.Add(this.btnSave);
-            this.tabPage5.Controls.Add(this.lblIcon);
-            this.tabPage5.Controls.Add(this.pIcon);
-            this.tabPage5.Controls.Add(this.txtFilename);
-            this.tabPage5.Controls.Add(this.lblFilename);
-            this.tabPage5.Controls.Add(this.listView2);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(986, 591);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Icon<->Image";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(746, 12);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(28, 22);
-            this.btnBrowse.TabIndex = 13;
-            this.btnBrowse.Text = "...";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(512, 178);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 29);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save As Image";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblIcon
-            // 
-            this.lblIcon.AutoSize = true;
-            this.lblIcon.Location = new System.Drawing.Point(509, 46);
-            this.lblIcon.Name = "lblIcon";
-            this.lblIcon.Size = new System.Drawing.Size(90, 16);
-            this.lblIcon.TabIndex = 11;
-            this.lblIcon.Text = "Selected Icon";
-            // 
-            // pIcon
-            // 
-            this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pIcon.Location = new System.Drawing.Point(512, 72);
-            this.pIcon.Name = "pIcon";
-            this.pIcon.Size = new System.Drawing.Size(100, 100);
-            this.pIcon.TabIndex = 10;
-            this.pIcon.TabStop = false;
-            // 
-            // txtFilename
-            // 
-            this.txtFilename.Location = new System.Drawing.Point(569, 14);
-            this.txtFilename.Name = "txtFilename";
-            this.txtFilename.Size = new System.Drawing.Size(171, 22);
-            this.txtFilename.TabIndex = 9;
-            // 
-            // lblFilename
-            // 
-            this.lblFilename.AutoSize = true;
-            this.lblFilename.Location = new System.Drawing.Point(500, 14);
-            this.lblFilename.Name = "lblFilename";
-            this.lblFilename.Size = new System.Drawing.Size(73, 16);
-            this.lblFilename.TabIndex = 8;
-            this.lblFilename.Text = "File Name:";
-            // 
-            // listView2
-            // 
-            this.listView2.BackColor = System.Drawing.Color.White;
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listView2.Location = new System.Drawing.Point(3, 3);
-            this.listView2.Name = "listView2";
-            this.listView2.ShowItemToolTips = true;
-            this.listView2.Size = new System.Drawing.Size(287, 585);
-            this.listView2.TabIndex = 7;
-            this.listView2.TileSize = new System.Drawing.Size(168, 168);
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.VirtualListSize = 10;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -176,10 +80,10 @@ namespace Imageviewer
             // 
             this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Controls.Add(this.menuStrip1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(986, 591);
+            this.tabPage3.Size = new System.Drawing.Size(986, 588);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Viewer";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -191,7 +95,7 @@ namespace Imageviewer
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Location = new System.Drawing.Point(3, 27);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(980, 561);
+            this.pictureBox2.Size = new System.Drawing.Size(980, 558);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -231,7 +135,6 @@ namespace Imageviewer
             this.Main.Controls.Add(this.tabPage1);
             this.Main.Controls.Add(this.tabPage3);
             this.Main.Controls.Add(this.tabPage4);
-            this.Main.Controls.Add(this.tabPage5);
             this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main.Location = new System.Drawing.Point(0, 0);
             this.Main.Name = "Main";
@@ -251,9 +154,6 @@ namespace Imageviewer
             this.Name = "Form1";
             this.Text = "Image Viewer";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pIcon)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -268,14 +168,6 @@ namespace Imageviewer
 
         #endregion
 
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblIcon;
-        private System.Windows.Forms.PictureBox pIcon;
-        private System.Windows.Forms.TextBox txtFilename;
-        private System.Windows.Forms.Label lblFilename;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1;
